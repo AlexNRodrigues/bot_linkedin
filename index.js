@@ -83,14 +83,14 @@ async function makeAuth(page) {
 
     const inputEmail = await page.$('input[id="session_key"]');
     if (!inputEmail) {
-        throw new Error('E-mail não encotrado');
+        throw new Error('E-mail não encontrado');
     }
     await page.focus('input[id="session_key"]');
     await page.keyboard.type(credentials.user);
 
     const inputPassword = await page.$('input[id="session_password"]');
     if (!inputPassword) {
-        throw new Error('Password não encotrado');
+        throw new Error('Password não encontrado');
     }
     await page.focus('input[id="session_password"]');
     await page.keyboard.type(credentials.pass);
